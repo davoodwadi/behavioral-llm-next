@@ -14,7 +14,7 @@ export const ExperimentActions = memo(function ExperimentActions({}) {
   console.log("ExperimentActions RERENDERED");
 
   const onReset = useExperimentStore((state) => state.resetAll);
-  const onDownload = useExperimentStore((state) => state.downloadConfig);
+  const downloadConfig = useExperimentStore((state) => state.downloadConfig);
   const experimentCombinations = useExperimentStore(
     (state) => state.experimentCombinations
   );
@@ -42,6 +42,11 @@ export const ExperimentActions = memo(function ExperimentActions({}) {
       return;
     }
     csvHandleDownload(csvContent);
+  };
+
+  const handleDownloadConfig = () => {
+    console.log("Download Config Requested");
+    downloadConfig();
   };
 
   return (
@@ -72,7 +77,11 @@ export const ExperimentActions = memo(function ExperimentActions({}) {
         <Button variant="destructive" onClick={onReset} className="flex-1">
           <RotateCcw className="mr-2 h-4 w-4" /> Reset Configuration
         </Button>
-        <Button variant="outline" onClick={onDownload} className="flex-1">
+        <Button
+          variant="outline"
+          onClick={handleDownloadConfig}
+          className="flex-1"
+        >
           <Download className="mr-2 h-4 w-4" /> Download Config (YAML)
         </Button>
       </div>
