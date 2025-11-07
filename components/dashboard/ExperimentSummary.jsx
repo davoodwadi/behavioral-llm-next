@@ -103,34 +103,6 @@ export function ExperimentSummary() {
           />
         </div>
 
-        {/* Subset Selection (Placeholder) */}
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>
-              Choose a Subset of Combinations to Run (optional)
-            </AccordionTrigger>
-            <AccordionContent>
-              Feature coming soon. Here you will be able to select a subset of
-              the {experimentMetrics.totalCombinations.toLocaleString()}{" "}
-              combinations to execute.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-
-        {/* Execution Info */}
-        <Alert>
-          <Info className="h-4 w-4" />
-          <AlertTitle>Execution Plan</AlertTitle>
-          <AlertDescription>
-            Executing{" "}
-            <strong>
-              {experimentMetrics.combinationsToRun.toLocaleString()}
-            </strong>{" "}
-            out of {experimentMetrics.totalCombinations.toLocaleString()} total
-            combinations.
-          </AlertDescription>
-        </Alert>
-
         {/* Total Iterations */}
         <div className="pt-2">
           <Metric
