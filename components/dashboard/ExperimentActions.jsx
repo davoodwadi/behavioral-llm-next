@@ -66,9 +66,6 @@ export const ExperimentActions = memo(function ExperimentActions({}) {
         >
           <Play className="mr-2 h-5 w-5" /> Compute Combinations
         </Button>
-        <ButtonGroupText>
-          <ArrowRight />
-        </ButtonGroupText>
         <ButtonGroupSeparator />
         {/* Step 2: only available after at least one computation */}
         <Button
