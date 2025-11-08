@@ -62,7 +62,7 @@ export const ExperimentActions = memo(function ExperimentActions({}) {
         <Button
           size="lg"
           onClick={handleComputeCombinations}
-          className="flex-1"
+          className="flex-1 cursor-pointer"
         >
           <Play className="mr-2 h-5 w-5" /> Compute Combinations
         </Button>
@@ -72,7 +72,7 @@ export const ExperimentActions = memo(function ExperimentActions({}) {
           // variant="outline"
           size="lg"
           onClick={handleDownloadCSV}
-          className="flex-1"
+          className="flex-1 cursor-pointer"
           disabled={experimentCombinations.length === 0}
         >
           <Download className="mr-2 h-4 w-4" /> Download Combinations (CSV)
@@ -82,7 +82,11 @@ export const ExperimentActions = memo(function ExperimentActions({}) {
       <Separator />
       <div className="flex flex-row space-x-2">
         <ButtonGroup className="w-full">
-          <Button variant="destructive" onClick={onReset} className="flex-1">
+          <Button
+            variant="destructive"
+            onClick={onReset}
+            className="flex-1 cursor-pointer"
+          >
             <RotateCcw className="mr-2 h-4 w-4" /> Reset Configuration
           </Button>
           <ButtonGroupSeparator />
@@ -90,7 +94,7 @@ export const ExperimentActions = memo(function ExperimentActions({}) {
           <Button
             variant="outline"
             onClick={handleDownloadConfig}
-            className="flex-1"
+            className="flex-1 cursor-pointer"
           >
             <Download className="mr-2 h-4 w-4" /> Download Config (YAML)
           </Button>
