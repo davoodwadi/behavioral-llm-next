@@ -6,8 +6,9 @@ import { useExperimentStore } from "@/lib/store/index";
 
 export const SystemPromptEditor = memo(function SystemPromptEditor({}) {
   const systemPrompt = useExperimentStore((state) => state.config.systemPrompt);
-  const setSystemPrompt = useExperimentStore((state) => state.setSystemPrompt);
+  const setConfig = useExperimentStore((state) => state.setConfig);
   console.log("SystemPromptEditor RERENDERED");
+  // console.log("system prompt", systemPrompt);
 
   return (
     <Card className="h-full">
@@ -17,7 +18,7 @@ export const SystemPromptEditor = memo(function SystemPromptEditor({}) {
       <CardContent className="h-full">
         <Textarea
           value={systemPrompt}
-          onChange={(e) => setSystemPrompt(e.target.value)}
+          onChange={(e) => setConfig("systemPrompt", e.target.value)}
           className="min-h-[200px] h-full"
         />
       </CardContent>
